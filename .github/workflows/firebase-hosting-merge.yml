@@ -25,10 +25,10 @@ jobs:
             ${{ runner.os }}-node-
 
       # run: npm ci && npm run build
+      - name: Go to client folder
+        run: cd client
       - name: Install dependencies
-        run: cd  client && npm install
-      - name: Run build task
-        run: npm run build
+        run: npm install && npm run build
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:

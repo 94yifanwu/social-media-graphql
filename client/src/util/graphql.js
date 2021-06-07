@@ -1,28 +1,29 @@
 import gql from 'graphql-tag'
 
-const FETCH_POSTS_QUERY = gql `
-{
-    getPosts {
-        id
-        body
-        createdAt
-        username
-        likeCount
-        likes {
-            username
-        }
-        commentCount
-        comments {
+export const FETCH_POSTS_QUERY = gql `
+    query getPosts{
+        getPosts {
             id
-            username
-            createdAt
             body
+            createdAt
+            username
+            likeCount
+            likes {
+                username
+            }
+            commentCount
+            comments {
+                id
+                username
+                createdAt
+                body
+            }
         }
     }
-}`
+`
 
 
-const CREATE_POST_MUTATION = gql `
+export const CREATE_POST_MUTATION = gql `
     mutation createPost($body: String!){
         createPost(body: $body){
             id
@@ -46,4 +47,25 @@ const CREATE_POST_MUTATION = gql `
     }
 `
 
-export {FETCH_POSTS_QUERY, CREATE_POST_MUTATION}
+export const LIKE_POST_MUTATION = gql`
+    mutation likePost($postId: ID!) {
+        likePost(postId: $postId) {
+            id
+            body
+            username
+            likes {
+                id
+                username
+            }
+            likeCount
+        }
+    }
+`
+
+export const DELETE_POST_MUTATION = gql`
+    mutation deletePost($postId: ID!) {
+        deletePost(postId: $postId) {
+            id
+        }
+    }
+`

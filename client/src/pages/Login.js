@@ -25,9 +25,6 @@ function Login(props) {
         ){
             context.login(userData); 
             props.history.push('/');
-            console.log('Login.js')
-            console.log(values)
-            console.log(userData.email)
         },
         onError(err) {
             setErrors(err.graphQLErrors[0].extensions.exception.errors);

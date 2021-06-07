@@ -8,6 +8,8 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import {AuthProvider} from './context/auth'
+import AuthRoute from './util/AuthRoute';
+
 
 function App() {
     return (
@@ -16,8 +18,8 @@ function App() {
                 <Container>
                     <Menubar />
                     <Route exact path='/' component={Home}/>
-                    <Route exact path='/login' component={Login}/>
-                    <Route exact path='/register' component={Register}/>
+                    <AuthRoute exact path='/login' component={Login}/>
+                    <AuthRoute exact path='/register' component={Register}/>
                 </Container>
             </Router>
         </AuthProvider>

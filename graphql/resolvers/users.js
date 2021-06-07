@@ -26,13 +26,13 @@ module.exports = {
 
             if( !find_user ){
                 errors.general = 'User not found1'
-                throw new UserInputError('User not found2',{ errors })
+                throw new UserInputError('User not found2 (gql)',{ errors })
             }
              
             const match_password = await bcrypt.compare(password, find_user.password)
             if(!match_password){
                 errors.general = "Wrong credential"
-                throw new UserInputError('Wrnong credential', {errors})
+                throw new UserInputError('Wrnong credential (gql)', {errors})
             }
 
             const token = generateToken(find_user)
@@ -62,7 +62,7 @@ module.exports = {
 
             const existed_user = await User.findOne({ username })
             if(existed_user){
-                throw new UserInputError('Username is taken',{
+                throw new UserInputError('Username is taken (gql)',{
                     errors: {
                         username: 'This username is taken ah'
                     }

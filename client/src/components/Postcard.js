@@ -3,7 +3,7 @@ import {Card, Image, Button, Icon, Label} from 'semantic-ui-react'
 import moment from 'moment'
 import {Link} from 'react-router-dom'
 
-function Postcard({ 
+function PostCard({ 
     post: {
         body, 
         createdAt, 
@@ -58,4 +58,4 @@ function Postcard({
     )
 }
 
-export default Postcard
+export default PostCard

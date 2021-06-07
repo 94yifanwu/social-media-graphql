@@ -1998,7 +1998,7 @@
     "tslib" "^1.10.0"
     "zen-observable" "^0.8.0"
 
-"apollo-link-context@^1.0.18":
+"apollo-link-context@^1.0.20":
   "integrity" "sha512-MLLPYvhzNb8AglNsk2NcL9AvhO/Vc9hn2ZZuegbhRHGet3oGr0YH9s30NS9+ieoM0sGT11p7oZ6oAILM/kiRBA=="
   "resolved" "https://registry.npmjs.org/apollo-link-context/-/apollo-link-context-1.0.20.tgz"
   "version" "1.0.20"

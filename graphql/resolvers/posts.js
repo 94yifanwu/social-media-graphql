@@ -19,7 +19,7 @@ module.exports = {
                 if(post){
                     return post
                 } else {
-                    throw new Error('Post Not FFound')
+                    throw new Error('Post Not Found (gql)')
                 }
             } catch(err){
                 throw new Error(err)
@@ -32,7 +32,7 @@ module.exports = {
             const user = checkAuth(context)
 
             if(body.trim()===''){
-                throw new Error('Post body must not be empty')
+                throw new Error('Post body must not be empty (gql)')
             }
             
             const newPost = new Post({
@@ -59,7 +59,7 @@ module.exports = {
                     await post.delete()
                     return 'Post deleted successfully'
                 } else{
-                    throw new AuthenticationError('Action not allowed')
+                    throw new AuthenticationError('Action not allowed (gql)')
                 }
             }
             catch(err){
@@ -84,7 +84,7 @@ module.exports = {
         
                 await post.save();
                 return post;
-            } else throw new UserInputError('Post not found');
+            } else throw new UserInputError('Post not found (gql)');
         }
     },
     Subscription: {

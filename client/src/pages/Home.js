@@ -1,10 +1,10 @@
 import React, {useContext} from 'react'
 import {useQuery} from '@apollo/react-hooks'
-import gql from 'graphql-tag'
 import {Grid, Transition} from 'semantic-ui-react'
 import PostCard from '../components/PostCard'
 import PostForm from '../components/PostForm'
 import {AuthContext} from '../context/auth'
+import {FETCH_POSTS_QUERY} from '../util/graphql'
 
 function Home() {
     const {user} = useContext(AuthContext)
@@ -40,26 +40,6 @@ function Home() {
     )
 }
 
-const FETCH_POSTS_QUERY = gql `
-query getPosts{
-    getPosts{
-        id
-        body
-        createdAt
-        username
-        likeCount
-        commentCount
-        likes{
-            username
-        }
-        comments{   
-            id
-            username
-            createdAt
-            body
-        }
-    }
-}`
 
 
 

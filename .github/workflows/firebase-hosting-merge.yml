@@ -26,7 +26,7 @@ jobs:
 
       # run: npm ci && npm run build
       - name: Install dependencies
-        run: npm install
+        run: cd  client && npm install
       - name: Run build task
         run: npm run build
 

@@ -36,11 +36,11 @@ function DeleteButton({ postId, commentId, callback }) {
                     <Icon name="trash" style={{ margin: 0 }}/>
                 </Button>
             </MyPopup>
-            {/* <Confirm 
+            <Confirm 
                 open={confirmOpen}
                 onCancel={()=> setConfirmOpen(false)}
                 onConfirm={deletePostOrMuatation}
-            /> */}
+            />
         </>
     )
 }

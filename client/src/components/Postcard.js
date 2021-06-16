@@ -20,12 +20,6 @@ function PostCard({
 
     const {user} = useContext(AuthContext)
 
-    function deletePost(){
-        console.log('delete button')
-    }
-    function commentOnPost(){
-        console.log("2222")
-    }
 
     return (
         <Card fluid>
@@ -42,9 +36,10 @@ function PostCard({
                 <Card.Description>{body}</Card.Description>
             </Card.Content>
             <Card.Content extra>
+
                 <LikeButton user={user} post={{id, likes, likeCount}}/>
 
-                <Button as="div" labelPosition='right' onClick={commentOnPost}>
+                <Button labelPosition='right' as={Link} to={`/posts/${id}`} >
                     <Button color="blue" basic>
                         <Icon name="comments" />
                     </Button>
@@ -53,11 +48,10 @@ function PostCard({
                     </Label>
                 </Button>
 
-                {user && user.username===username && (
-                    <Button as="div" labelPosition='right' >
-                        <DeleteButton user={user} postId={id} />
-                    </Button>
-                )}
+                {user && user.username === username && 
+                    <DeleteButton postId={id} 
+                />}
+
             </Card.Content>
         </Card>
     )

@@ -9,3 +9,7 @@ Express
 NodeJS
 
 ReactJS
+
+Host:
+
+Firebase and Heroku
